@@ -53,7 +53,7 @@ public class HoleFiller extends Module {
     @Override
     public void onEnable() {
 
-        if (ModuleManager.getModuleByName("NutgodCA").isEnabled())
+        if (ModuleManager.getModuleByName("CrystalAura").isEnabled())
             caOn = true;
 
         if (announceUsage.getValue()) {
@@ -96,7 +96,7 @@ public class HoleFiller extends Module {
         render = q;
         if (q != null && mc.player.onGround) {
             if (caOn)
-                ModuleManager.getModuleByName("NutgodCA").disable();
+                ModuleManager.getModuleByName("CrystalAura").disable();
             int oldSlot = mc.player.inventory.currentItem;
             if (mc.player.inventory.currentItem != obsidianSlot)
                 mc.player.inventory.currentItem = obsidianSlot;
@@ -106,7 +106,7 @@ public class HoleFiller extends Module {
             mc.player.inventory.currentItem = oldSlot;
             resetRotation();
             if (caOn)
-                ModuleManager.getModuleByName("NutgodCA").enable();
+                ModuleManager.getModuleByName("CrystalAura").enable();
         }
     }
 
